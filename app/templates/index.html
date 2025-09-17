@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubrics Service</title>
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Subject Selection</h2>
+            <div class="subject-buttons">
+                <button class="subject-btn active" data-subject="math">Math</button>
+                <button class="subject-btn" data-subject="physics">Physics</button>
+                <button class="subject-btn" data-subject="chemistry">Chemistry</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h1>Rubrics Generation Service</h1>
+            
+            <!-- Upload Sections -->
+            <div class="upload-sections">
+                <!-- Question Images -->
+                <div class="upload-section">
+                    <h3>1. Question Images</h3>
+                    <div class="upload-area" id="question-upload">
+                        <input type="file" id="question-files" multiple accept="image/*" required>
+                        <label for="question-files" class="upload-label">
+                            <div class="upload-icon">📁</div>
+                            <span>Click to upload question images</span>
+                        </label>
+                        <div class="file-previews" id="question-previews"></div>
+                    </div>
+                </div>
+
+                <!-- Rubrics Images -->
+                <div class="upload-section">
+                    <h3>2. Rubrics Images</h3>
+                    <div class="upload-area" id="rubrics-upload">
+                        <input type="file" id="rubrics-files" multiple accept="image/*" required>
+                        <label for="rubrics-files" class="upload-label">
+                            <div class="upload-icon">📁</div>
+                            <span>Click to upload rubrics images</span>
+                        </label>
+                        <div class="file-previews" id="rubrics-previews"></div>
+                    </div>
+                </div>
+
+                <!-- Solution Images -->
+                <div class="upload-section">
+                    <h3>3. Solution Images</h3>
+                    <div class="upload-area" id="solution-upload">
+                        <input type="file" id="solution-files" multiple accept="image/*" required>
+                        <label for="solution-files" class="upload-label">
+                            <div class="upload-icon">📁</div>
+                            <span>Click to upload solution images</span>
+                        </label>
+                        <div class="file-previews" id="solution-previews"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="generate-btn" disabled>Generate Rubrics</button>
+                <button id="next-btn" style="display: none;">Next Question</button>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Generating rubrics...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" style="display: none;">
+                <h2>Generated Rubric</h2>
+                <div id="rubric-output"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
